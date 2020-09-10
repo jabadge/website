@@ -225,7 +225,8 @@ POSTS = (
     ("posts/*.html", "blog", "post.tmpl"),
     ("posts/*.ipynb", "blog", "post.tmpl")
 )
-PAGES = (
+PAGES = ()
+HIERARCHICAL_PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),

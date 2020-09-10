@@ -1,5 +1,5 @@
 <!--
-.. title: how-to
+.. title: How-to
 .. slug: how-to
 .. date: 2020-09-05 16:02:48 UTC-07:00
 .. tags: 
