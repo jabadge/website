@@ -7,6 +7,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 -->
 
 This page is for you if you've already mastered the content in the icepack tutorials, and now you want to run large, complex, and realistic simulations of glaciers and ice sheets.

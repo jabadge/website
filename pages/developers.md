@@ -7,6 +7,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 -->
 
 This page is for you if you want to help contribute to the development of icepack.

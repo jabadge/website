@@ -7,6 +7,7 @@
 .. link:
 .. description:
 .. type: text
+.. hidetitle: True
 -->
 
 Welcome to the homepage for *icepack*, a Python library for modeling the flow of glaciers and ice sheets.
