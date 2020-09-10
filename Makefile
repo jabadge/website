@@ -5,7 +5,7 @@
 DEMO_FILES:=$(shell find ${ICEPACK}/demo -not -path '*/\.*' -type f -name '*\.ipynb' | sort)
 
 # Make a `notebooks` target containing all of the imported, executed demos
-notebooks: $(patsubst ${ICEPACK}/demo/%.ipynb,pages/demos/%.ipynb,$(DEMO_FILES))
+notebooks: $(patsubst ${ICEPACK}/demo/%.ipynb,pages/demos-%.ipynb,$(DEMO_FILES))
 
 .PRECIOUS: executed-demos/%.ipynb
 
@@ -21,7 +21,7 @@ executed-demos/%.ipynb: ${ICEPACK}/demo/%.ipynb
 
 # To get any demo page from an executed demo, call `nikola new_page`, extract
 # the title of the demo from its raw source, and import it
-pages/demos/%.ipynb: executed-demos/%.ipynb
+pages/demos-%.ipynb: executed-demos/%.ipynb
 	nikola new_page \
 	    --format ipynb \
 	    --title="$$(python3 extract_title.py $<)" \
@@ -29,7 +29,6 @@ pages/demos/%.ipynb: executed-demos/%.ipynb
 	    $@
 
 all:
-	nikola plugin -i hierarchical_pages
 	nikola build
 
 clean:

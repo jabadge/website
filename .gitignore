@@ -1,5 +1,5 @@
 # Site-specific things
-pages/demos/*.ipynb
+pages/demos-*.ipynb
 executed-demos/*.ipynb
 
 # Nikola-related things
