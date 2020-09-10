@@ -1,7 +1,7 @@
 import sys
 import json
 
-def _extract_title(notebook):
+def extract_title(notebook):
     cells = notebook['cells']
     for cell in cells:
         if cell['cell_type'] == 'markdown':
@@ -16,5 +16,5 @@ if __name__ == "__main__":
     with open(filename, 'r') as notebook_file:
         notebook = json.load(notebook_file)
 
-    title = _extract_title(notebook)
+    title = extract_title(notebook)
     print(title)

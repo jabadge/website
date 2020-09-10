@@ -9,11 +9,7 @@
 .. hidetitle: True
 
 .. sidebar:: Tutorials
-
-    `Meshes, functions </demos-00-meshes-functions/>`_
-
-    `Synthetic ice shelves </demos-01-synthetic-ice-shelf/>`_
-
+{}
 
 This page is for you if you're just starting out with icepack and you want to learn how to use it.
 These tutorials demonstate all of the functionality of the library that you will need to set up simulations of glacier flow.

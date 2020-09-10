@@ -28,7 +28,12 @@ pages/demos-%.ipynb: executed-demos/%.ipynb
 	    --import=$< \
 	    $@
 
-all:
+# Make the tutorials page from a template by filling in a list of all the demos
+# found in the `pages/` directory
+pages/tutorials.rst: notebooks make_tutorials_page.py
+	python3 make_tutorials_page.py
+
+all: notebooks pages/tutorials.rst
 	nikola build
 
 clean:
