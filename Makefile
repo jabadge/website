@@ -1,5 +1,9 @@
 .PHONY: clean all
 
+api-docs/build/icepack.rst: api-docs/conf.py api-docs/api.rst
+	sphinx-apidoc --force --separate --maxdepth=1 --module-first -o api-docs ${ICEPACK}/icepack
+	sphinx-build -b rst api-docs api-docs/build
+
 # Find all of the icepack demos by searching the `demo` directory of icepack
 # for anything that ends with `.ipynb` and isn't a directory and sort them
 DEMO_FILES:=$(shell find ${ICEPACK}/demo -not -path '*/\.*' -type f -name '*\.ipynb' | sort)
