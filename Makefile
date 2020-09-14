@@ -1,8 +1,8 @@
 .PHONY: clean all
 
-api-docs/build/icepack.rst: api-docs/conf.py api-docs/api.rst
-	sphinx-apidoc --force --separate --maxdepth=1 --module-first -o api-docs ${ICEPACK}/icepack
-	sphinx-build -b rst api-docs api-docs/build
+api-docs/build/icepack.md: api-docs/conf.py api-docs/api.rst
+	sphinx-apidoc --force --module-first -o api-docs ${ICEPACK}/icepack
+	sphinx-build -b markdown api-docs api-docs/build
 
 # Find all of the icepack demos by searching the `demo` directory of icepack
 # for anything that ends with `.ipynb` and isn't a directory and sort them

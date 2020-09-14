@@ -19,7 +19,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
     'sphinxcontrib.bibtex',
-    'sphinx_rst_builder'
+    'sphinx_markdown_builder'
 ]
 
 # The suffix(es) of source filenames.
