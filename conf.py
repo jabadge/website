@@ -841,7 +841,7 @@ GENERATE_ATOM = False
 
 # If set to True, the tags 'draft', 'mathjax' and 'private' have special
 # meaning. If set to False, these tags are handled like regular tags.
-USE_TAG_METADATA = False
+USE_TAG_METADATA = True
 
 # If set to True, a warning is issued if one of the 'draft', 'mathjax'
 # and 'private' tags are found in a post. Useful for checking that

@@ -14,6 +14,8 @@
 
     `Submitting new code </pull-requests/>`_
 
+    `Testing code </testing/>`_
+
 
 First of all, thank you for thinking about contributing to this project!
 Icepack is free and open-source software developed for the express purpose of serving the glaciological community.
