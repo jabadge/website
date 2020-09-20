@@ -51,8 +51,10 @@ If you're modifying one of the demos or adding a new demo, we'll ask that you ta
 We store only the un-executed form of the notebook with no outputs or plots in the icepack git repository, with the understanding that a user can always execute the notebook in order to see the results.
 To remove any outputs or plots and restore a notebook to its original state, you can use [`nbstripout`](https://github.com/kynan/nbstripout) command:
 
-    pip3 install nbstripout
-    nbstripout icepack/demo/<name of demo>.ipynb
+```shell
+pip3 install nbstripout
+nbstripout icepack/demo/<name of demo>.ipynb
+```
 
 Jupyter notebooks have lots other unnecessary metadata that this command can remove for us.
 

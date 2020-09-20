@@ -19,17 +19,23 @@ For more explanation, see below.
 
 Install Firedrake, building PETSc along the way:
 
-    curl -O https://raw.githubusercontent.com/firedrakeproject/firedrake/master/scripts/firedrake-install
-    python3 firedrake-install --install icepack
+```shell
+curl -O https://raw.githubusercontent.com/firedrakeproject/firedrake/master/scripts/firedrake-install
+python3 firedrake-install --install icepack
+```
 
 Activate the Firedrake virtual environment:
 
-    source <path/to/firedrake>/bin/activate
+```shell
+source <path/to/firedrake>/bin/activate
+```
 
 Run one of the icepack unit tests to make sure it works:
 
-    cd $VIRTUAL_ENV/src/icepack
-    pytest -s test/ice_shelf_test.py
+```shell
+cd $VIRTUAL_ENV/src/icepack
+pytest -s test/ice_shelf_test.py
+```
 
 Your icepack installation lives in the directory `$VIRTUAL_ENV/src/icepack`.
 
@@ -39,20 +45,28 @@ Install the mesh generator [gmsh](http://gmsh.info/).
 Binaries are available on their website, or you can use your system package manager.
 On MacOS,
 
-    brew install gmsh
+```shell
+brew install gmsh
+```
 
 On Debian, Mint, or Ubuntu:
 
-    sudo apt-get install gmsh
+```shell
+sudo apt-get install gmsh
+```
 
 Now make a Jupyter kernel for firedrake:
 
-    pip3 install ipykernel
-    python3 -m ipykernel install --user --name=firedrake
+```shell
+pip3 install ipykernel
+python3 -m ipykernel install --user --name=firedrake
+```
 
 Run the demo notebooks:
 
-    cd $VIRTUAL_ENV/src/icepack/demo
+```shell
+cd $VIRTUAL_ENV/src/icepack/demo
+```
 
 ### Comments
 
@@ -67,15 +81,19 @@ The added layer of isolation keeps one package from breaking other packages on t
 
 However, it does introduce an annoying layer of bureaucracy -- you have to manually activate the virtual environment every time you want to use it by invoking:
 
-    source <path/to/virtual/environment>/bin/activate
+```shell
+source <path/to/virtual/environment>/bin/activate
+```
 
 Again, activating a virtual environment affects only the current shell session and doesn't do anything permanent.
 
 You can save yourself the trouble of remembering where the activate script lives by adding a function like this to your `.bashrc` or `.bash_profile`:
 
-    firedrake-env() {
-        source <path/to/virtual/environment>/bin/activate
-    }
+```shell
+firedrake-env() {
+    source </absolute/path/to/virtual/environment>/bin/activate
+}
+```
 
 When you type `firedrake-env` at the terminal, the firedrake virtual environment will be activated.
 If you find yourself using lots of different virtual environments, you might also like [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/).

@@ -20,14 +20,20 @@ For example, you might be working on more than one feature at the same time, or 
 
 The first thing you'll want to do is clone icepack into a separate directory and add your fork as a remote.
 
-    git clone git@github.com:icepack/icepack.git
-    cd icepack
-    git remote add <your name> git@github.com:<your GitHub username>/icepack.git
+```shell
+git clone git@github.com:icepack/icepack.git
+cd icepack
+git remote add \
+    <your name> \
+    git@github.com:<your GitHub username>/icepack.git
+```
 
 Next, you'll want to activate the virtual environment and install both icepack and the dependencies for building the documentation in editable mode:
 
-    source </path/to/firedrake>/bin/activate
-    pip3 install --editable ."[doc]"
+```shell
+source </path/to/firedrake>/bin/activate
+pip3 install --editable ."[doc]"
+```
 
 The `--editable` flag guarantees that changes you make to the source code get seen automatically whenever you import icepack; without this flag, you'd have to reinstall again every time you made changes.
 
@@ -49,8 +55,10 @@ If you're working on a new feature, you might find that the master branch has be
 Sometimes the changes to the master branch might even include bug fixes that are useful or relevant to the feature you're working on.
 In order to pull the latest changes into your branch, you can run the following commands:
 
-    git fetch origin master
-    git rebase origin/master
+```shell
+git fetch origin master
+git rebase origin/master
+```
 
 The git `rebase` command is a really powerful tool which you should read more about.
 What it does is effectively rewrite the commit history to put the changes in your branch on top of any changes from the master branch.
@@ -59,7 +67,9 @@ The nice part about `rebase` as opposed to `merge` is that it won't create an un
 The other important use of the rebase command is to clean up or otherwise alter the commit history of a branch you're working on.
 This is best done through an *interactive* rebase:
 
-    git rebase --interactive HEAD~<number of commits>
+```shell
+git rebase --interactive HEAD~<number of commits>
+```
 
 Git will then fire up the text editor of your choice and present you with a list of the number of commits you selected.
 You can then choose to `pick` those commits, `edit` the changes in that commit, `squash` two commits into each other, or change the order in which those commits were applied.

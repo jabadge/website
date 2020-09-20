@@ -24,14 +24,18 @@ For example, [flake8](https://flake8.pycqa.org/en/latest/) can detect things lik
 A common feature of these tools is that they spit out loads of warnings for perfectly innocuous code, so using them effectively means figuring out how to make them less annoyingly pedantic.
 The incantation we use for flake8 is:
 
-    flake8 --ignore=E741,E501,W504 ./
+```shell
+flake8 --ignore=E741,E501,W504 ./
+```
 
 The `--ignore` flag removes a few warning types that we don't care about.
 While flake8 looks mostly for stylistic problems, the tool [pylint](https://github.com/PyCQA/pylint) goes much further.
 Pylint will suggest things like refactoring repeated code, splitting up long functions into smaller ones, and so forth.
 The pylint invocation that we've found works best is
 
-    pylint --disable=invalid-name,non-ascii-name,attribute-defined-outside-init,invalid-unary-operand-type ./
+```shell
+pylint --disable=invalid-name,non-ascii-name,attribute-defined-outside-init,invalid-unary-operand-type ./
+```
 
 This form disables several warning types that we don't consider helpful.
 For example, both pylint and flake8 suggest that single-character identifier names like `i` and `j` are ambiguous.
