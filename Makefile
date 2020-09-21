@@ -20,13 +20,16 @@ executed-demos/%.ipynb: ${ICEPACK}/demo/%.ipynb
 	    $<
 
 # To get any demo page from an executed demo, call `nikola new_page`, extract
-# the title of the demo from its raw source, and import it
+# the title of the demo from its raw source, and import it. Next, use jq and
+# sponge to add an attribute to the notebook metadata that tells nikola to hide
+# the page title. The title is part of the notebook anyway.
 pages/demos-%.ipynb: executed-demos/%.ipynb
 	nikola new_page \
 	    --format ipynb \
 	    --title="$$(python3 extract_title.py $<)" \
 	    --import=$< \
 	    $@
+	jq '.metadata.nikola += {hidetitle: "True"}' $@ | sponge $@
 
 # Make the tutorials page from a template by filling in a list of all the demos
 # found in the `pages/` directory
