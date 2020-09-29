@@ -61,7 +61,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "base"
+THEME = "icepack"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -467,7 +467,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'friendly'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
