@@ -1,21 +1,18 @@
 .PHONY: clean all
 
-# Find all of the icepack demos by searching the `demo` directory of icepack
+# Find all of the notebooks by searching the `notebooks` directory of icepack
 # for anything that ends with `.ipynb` and isn't a directory and sort them
-DEMO_FILES:=$(shell find ${ICEPACK}/demo -not -path '*/\.*' -type f -name '*\.ipynb' | sort)
+NOTEBOOK_FILES:=$(shell find ${ICEPACK}/notebooks -not -path '*/\.*' -type f -name '*\.ipynb' | sort)
 
-# Make a `notebooks` target containing all of the imported, executed demos
-notebooks: $(patsubst ${ICEPACK}/demo/%.ipynb,pages/demos-%.ipynb,$(DEMO_FILES))
-
-.PRECIOUS: executed-demos/%.ipynb
-
-# To get any executed demo from its source in icepack, call `jupyter nbconvert`
-executed-demos/%.ipynb: ${ICEPACK}/demo/%.ipynb
+# Make a target containing all of the imported, executed demos; to get any
+# executed demo from its source in icepack, call `jupyter nbconvert`.
+executed-notebooks: $(patsubst ${ICEPACK}/notebooks/%.ipynb,executed-notebooks/%.ipynb,$(NOTEBOOK_FILES))
+executed-notebooks/%.ipynb: ${ICEPACK}/notebooks/%.ipynb
 	jupyter nbconvert \
 	    --to ipynb \
 	    --execute \
 	    --ExecutePreprocessor.timeout=24000 \
-	    --output-dir=./executed-demos \
+	    --output-dir=`dirname $@` \
 	    --output=`basename $@` \
 	    $<
 
@@ -23,7 +20,7 @@ executed-demos/%.ipynb: ${ICEPACK}/demo/%.ipynb
 # the title of the demo from its raw source, and import it. Next, use jq and
 # sponge to add an attribute to the notebook metadata that tells nikola to hide
 # the page title. The title is part of the notebook anyway.
-pages/demos-%.ipynb: executed-demos/%.ipynb
+pages/tutorials-%.ipynb: executed-demos/%.ipynb
 	nikola new_page \
 	    --format ipynb \
 	    --title="$$(python3 extract_title.py $<)" \
