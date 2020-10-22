@@ -20,7 +20,9 @@ executed-notebooks/%.ipynb: ${ICEPACK}/notebooks/%.ipynb
 # the title of the demo from its raw source, and import it. Next, use jq and
 # sponge to add an attribute to the notebook metadata that tells nikola to hide
 # the page title. The title is part of the notebook anyway.
-pages/tutorials-%.ipynb: executed-demos/%.ipynb
+notebooks: $(patsubst ${ICEPACK}/notebooks/%.ipynb,pages/notebooks/%.ipynb,$(NOTEBOOK_FILES))
+pages/notebooks/%.ipynb: executed-notebooks/%.ipynb
+	rm -f $@
 	nikola new_page \
 	    --format ipynb \
 	    --title="$$(python3 extract_title.py $<)" \
@@ -30,10 +32,10 @@ pages/tutorials-%.ipynb: executed-demos/%.ipynb
 
 # Make the tutorials page from a template by filling in a list of all the demos
 # found in the `pages/` directory
-pages/tutorials.rst: notebooks make_tutorials_page.py
-	python3 make_tutorials_page.py
+pages/tutorials.rst pages/how-to.rst &: notebooks make_notebook_pages.py
+	python3 make_notebook_pages.py
 
-all: notebooks pages/tutorials.rst
+all: notebooks pages/tutorials.rst pages/how-to.rst
 	nikola build
 
 clean:

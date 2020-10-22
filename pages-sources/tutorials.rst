@@ -13,7 +13,7 @@
 
 This page is for you if you're just starting out with icepack and you want to learn how to use it.
 These tutorials demonstate all of the functionality of the library that you will need to set up simulations of glacier flow.
-These pages are rendered from Jupyter notebooks that come with the icepack source distribution under the ``demo/`` directory.
+These pages are rendered from Jupyter notebooks that come with the icepack source distribution under the directory ``notebooks/tutorials/``.
 You can and should run all of this code yourself.
 
 At this point, you should have a working installation of Firedrake and icepack, a Jupyter kernel for Firedrake, and you should be able to run the tutorial notebooks.

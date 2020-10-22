@@ -1,17 +1,19 @@
-<!--
 .. title: How-to
 .. slug: how-to
 .. date: 2020-09-05 16:02:48 UTC-07:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags:
+.. category:
+.. link:
+.. description:
 .. type: text
 .. hidetitle: True
--->
+
+.. sidebar:: How-to guides
+{}
 
 This page is for you if you've already mastered the content in the icepack tutorials, and now you want to run large, complex, and realistic simulations of glaciers and ice sheets.
 Here we'll show you what you need to know to maximize the performance out of icepack, how to couple to other models, how to run suites of simulations to explore parameter sensitivity, how to check simulation results for accuracy after the fact, and more.
+These pages are rendered from Jupyter notebooks that come with the icepack source distribution under the directory ``notebooks/how-to/``.
 
 The goal of these how-to guides is to help you move from just learning to simulate glacier flow to producing the kinds of simulations that you can publish peer-reviewed articles about in scholarly journals.
 If you've reached this point, you've probably used icepack enough to have found things you need that we don't offer yet.

@@ -1,6 +1,7 @@
 # Site-specific things
 pages/tutorials.rst
-pages/demos-*.ipynb
+pages/how-to.rst
+pages/notebooks/
 executed-notebooks/
 
 # Nikola-related things
