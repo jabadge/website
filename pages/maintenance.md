@@ -32,10 +32,13 @@ Next, you'll want to activate the virtual environment and install both icepack a
 
 ```shell
 source </path/to/firedrake>/bin/activate
-pip3 install --editable ."[doc]"
+pip3 install --editable </path/to/icepack>"[doc]"
 ```
 
-The `--editable` flag guarantees that changes you make to the source code get seen automatically whenever you import icepack; without this flag, you'd have to reinstall again every time you made changes.
+The `--editable` flag guarantees that changes you make to the source code get seen automatically whenever you import icepack.
+Without this flag, you'd have to reinstall again every time you made changes.
+The flag `"[doc]"` at the end tells pip to also install the dependencies you'll need to build the icepack documentation.
+This is part of a [general mechanism](https://setuptools.readthedocs.io/en/latest/references/keywords.html) of Python's setuptools for specifying optional dependencies.
 
 In the unfortunate event that your Firedrake installation becomes unusable, for example because your operating system decided to upgrade Python out from under you, you can delete the entire Firedrake virtual environment and reinstall a fresh one without losing any changes you made to your branch of icepack.
 
