@@ -36,3 +36,15 @@ We're a team of researchers and PhD students, mostly at the University of Washin
 If you're interested in using icepack and need some help getting started, we'd love to hear from you!
 If you already find icepack useful and want to get involved in development, we'll take all the help we can get!
 Please see the [contact](/contact/) page for how to get in touch.
+
+## Thanks
+
+Several people and organizations have made this project possible.
+We're grateful to the National Science Foundation, National Aeronautics and Space Administration, and the University of Washington eScience Institute for their generous financial support.
+The Juneau Icefield Research Program has provided wonderful opportunities for field work.
+[Jeremy Stock](http://jeremystock.com/) designed our logo.
+This webpage is powered by the static site generator [Nikola](https://getnikola.com).
+
+<img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo_thumb.jpg" height="100px">
+<img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" height="100px">
+<img src="https://images.squarespace-cdn.com/content/v1/506e663fe4b04973cff68e47/1369952390562-6Z312A18G5AXIP7B4ZUH/ke17ZwdGBToddI8pDm48kPN_12wwgQFQ1P_MNUxodclZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIptSEwx6RWl3Iho5G7dcdVrve9aC9KuCr35c8ZMFQhoQKMshLAGzx4R3EDFOm1kBS/JIRP_Blue.jpg" height="100px">
