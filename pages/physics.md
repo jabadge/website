@@ -34,13 +34,13 @@ To get all the notation out of the way, here's a table of all the symbols that w
 
 These fields are all reported in units of megapascals - meters - years.
 This unit system is a little unusual; we borrowed it from the package [Elmer/ICE](https://elmerice.elmerfem.org/).
-It has the advantage of making certain physical constants, like the Glen flow law rate factor, live in a fairly sensible numerical range, whereas the values are often either gigantic or impossible small in MKS units.
+It has the advantage of making certain physical constants, like the Glen flow law rate factor, live in a fairly sensible numerical range, whereas the values are often either gigantic or tiny in MKS units.
 
 
 ### Momentum conservation
 
-J.D. Forbes in 1848 was the first Western scientist to correctly identify the motion of glaciers as being a result of viscous fluid flow.
-In his original paper on the subject, Forbes has a wonderful quote about this realization of his:
+J.D. Forbes in 1848 was the first Western scientist to correctly identify viscous deformation as the reason why glaciers flow.
+In his original paper on the subject, Forbes has a wonderful quote about this realization:
 
 > There is something pleasing to the imagination in the unexpected analogies presented by a torrent of fiery lava and the icy stream of a glacier.
 
@@ -60,7 +60,7 @@ $$\nabla\cdot\tau - \nabla p + f = 0.$$
 To close this set of equations, we'll also need a *constitutive relation* between the deviatoric stress tensor and either the velocity or its gradient.
 For a plain old viscous Newtonian fluid, the deviatoric stress and the strain rate tensor
 
-$$\dot\varepsilon \equiv \frac{1}{2}\left(\nabla u + \nabla u^\top\right)$$
+$$\dot\varepsilon(u) \equiv \frac{1}{2}\left(\nabla u + \nabla u^\top\right)$$
 
 are linearly proportional to each other.
 But glacier ice is not a Newtonian fluid!
@@ -110,7 +110,8 @@ On top of that, an action principle is shorter to write down.
 
 ### Simplification
 
-Nearly all terrestrial glacier flows have much wider horizontal than vertical extents and, by expanding the aspect ratio $\delta = H/L$, it's possible to derive several PDE systems that are much simpler than the Stokes equations.
+Nearly all terrestrial glacier flows have much wider horizontal than vertical extents.
+By expanding the equations of motion in the aspect ratio $\delta = H/L$, it's possible to derive PDE systems that are much simpler than the Stokes equations.
 Eliminating terms that scale like $\delta$, the vertical component of the momentum balance becomes
 
 $$\frac{\partial}{\partial z}(\tau_{zz} - p) - \rho g = 0.$$
@@ -125,7 +126,7 @@ The `IceStream` class in icepack describes the depth-averaged system.
 For completeness sake, we'll write down the action functional for the shallow stream equations.
 Since the vertical component of the velocity and stress tensor has been eliminated, in 2D we have a new definition of the effective strain rate:
 
-$$\dot\varepsilon(u) \equiv \sqrt{\frac{\dot\varepsilon : \dot\varepsilon + \text{tr}(\dot\varepsilon)^2}{2}}.$$
+$$|\dot\varepsilon| \equiv \sqrt{\frac{\dot\varepsilon : \dot\varepsilon + \text{tr}(\dot\varepsilon)^2}{2}}.$$
 
 For the full 3D velocity, the trace of the strain rate tensor is zero -- this is another way of restating the divergence-free condition, which we'll discuss below.
 But the 2D strain rate of the depth-averaged velocity field can have non-zero divergence.
