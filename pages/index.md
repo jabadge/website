@@ -12,7 +12,7 @@
 
 Welcome to the homepage for *icepack*!
 Icepack is a Python library for solving the equations of motion of glacier flow.
-Our goals are to lower than barrier to entry to using flow models if you're not an expert in numerical simulation, and to produce a set of tools that will be useful to you if you are.
+Our goal is to lower than barrier to entry to using flow models if you're not an expert in numerical simulation, and to produce a set of tools that will be useful to you if you are.
 
 Some features we're especially proud of include:
 

@@ -49,6 +49,7 @@ NAVIGATION_LINKS = {
         ("/tutorials/", "Tutorials"),
         ("/how-to/", "How-to"),
         ("/developers/", "Development"),
+        ("/physics/", "Physics"),
         ("/contact/", "Contact"),
     ),
 }
