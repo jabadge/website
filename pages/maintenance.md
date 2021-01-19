@@ -40,6 +40,12 @@ Without this flag, you'd have to reinstall again every time you made changes.
 The flag `"[doc]"` at the end tells pip to also install the dependencies you'll need to build the icepack documentation.
 This is part of a [general mechanism](https://setuptools.readthedocs.io/en/latest/references/keywords.html) of Python's setuptools for specifying optional dependencies.
 
+As icepack is updated, you may find that you need to check for and install any missing dependencies.
+To do this, navigate to the icepack directory and run:
+```shell
+pip3 install -e .
+```
+
 In the unfortunate event that your Firedrake installation becomes unusable, for example because your operating system decided to upgrade Python out from under you, you can delete the entire Firedrake virtual environment and reinstall a fresh one without losing any changes you made to your branch of icepack.
 
 ### Editors and IDEs
